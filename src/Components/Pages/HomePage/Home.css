@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.poppins {
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.cinzel {
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.slide-container .slide .item {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    width: 200px;
+    height: 300px;
+    box-shadow: 0 0 20px 10px #36363679;
+    border-radius: 20px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    transition: 0.5s;
+}
+
+.slide-container .slide .item:nth-child(1),
+.slide-container .slide .item:nth-child(2){
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    background-position: center center;
+}
+
+.slide .item:nth-child(3){
+    left: 50%;
+}
+
+.slide .item:nth-child(4){
+    left: calc(50% + 220px);
+}
+
+.slide .item:nth-child(5){
+    left: calc(50% + 440px);
+}
+
+.slide .item:nth-child(n + 6){
+    left: calc(50% + 660px);
+    opacity: 0;
+}
+
+.item .content {
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    transform: translate(0, -50%);
+    max-width: 548px;
+    color: #fff;
+    background: linear-gradient(45deg, #222026a6, #2220267c);
+    padding: 45px 50px;
+    border-radius: 20px;
+    display: none;
+}
+
+.item:nth-child(2) .content{
+    display: block;
+}
+
+.item .content .name{
+    font-size: 60px;
+    font-weight: bold;
+    animation: animate 1s ease-in-out 0.3s 1 forwards;
+    opacity: 0;
+    transition: 1s;
+}
+
+.item .content .des{
+    margin: 0 0 20px;
+    animation: animate 1s ease-in-out 0.6s 1 forwards;
+    opacity: 0;
+    transition: 1s;
+    
+}
+
+.item .content button{
+    background: #F9A51A;
+    animation: animate 1s ease-in-out 0.9s 1 forwards;
+    opacity: 0;
+    transition: 1s;
+}
+
+.control-btn {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translate(0, -50%);
+}
+
+.control-btn button{
+    margin: 0 8px;
+}
+
+@keyframes animate {
+    from {
+        transform: translate(0, 100px);
+        filter: blur(30px);
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        filter: blur(0);
+        opacity: 1;
+    }
+}
